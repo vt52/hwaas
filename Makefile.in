@@ -1,0 +1,13 @@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+bindir = @bindir@
+
+hello: hello.c
+	$(CC) -Wall -O3 -o hwaas hello.c
+
+clean:
+	rm -f hwaas
+
+install: hwaas
+	install -d $(bindir)
+	install -t $(bindir) hwaas
